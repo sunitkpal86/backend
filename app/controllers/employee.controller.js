@@ -24,7 +24,8 @@ exports.create = (req, res) =>{
 };
 
 exports.findAll = (req, res) => {
-	Employee.find()
+	try{
+		Employee.find()
 	.then(employees =>{
 		res.send(employees);
 	}).catch(err =>{
@@ -32,6 +33,10 @@ exports.findAll = (req, res) => {
 			message : err.message || "Some error occurred while retrieving employees."
 		});
 	});
+	}
+	catch(ex){
+		console.log(ex);
+	}
 };
 
 exports.findOne = (req, res) => {
