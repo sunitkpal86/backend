@@ -43,7 +43,8 @@ app.get('/',(req, res)=>{
 require('./app/routes/note.routes.js')(app);
 require('./app/routes/employee.routes.js')(app);
 
+const PORT = 8000;
 
-app.listen(3000, ()=>{
-	console.log("Server is listening on port 3000");
+app.listen(PORT, ()=>{
+	console.log("Server is listening on port 8000");
 });
