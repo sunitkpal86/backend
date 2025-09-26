@@ -9,7 +9,7 @@ const corsConfig = {
 	methods : ["GET", "POST", "PUT", "DELETE"],
 }
 const app = express();
-
+app.options("", cors(corsConfig));
 app.use(cors(corsConfig))
 
 
