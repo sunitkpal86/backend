@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-
 var cors = require('cors')
 const corsConfig = {
 	origin: "*",
@@ -11,9 +10,6 @@ const corsConfig = {
 const app = express();
 app.options("", cors(corsConfig));
 app.use(cors(corsConfig))
-
-
-
 
 app.use(bodyParser.urlencoded({extended : true }))
 
