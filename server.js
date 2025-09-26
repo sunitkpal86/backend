@@ -23,9 +23,9 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(dbConfig.url,{
-	useUnifiedTopology: true
-	// useNewUrlParser: true
+//mongoose.connect(dbConfig.url,{
+mongoose.connect('mongodb+srv://sunitkpal86_db_user:wW7gwcHkY2WpHyv0@cluster0.5zodcua.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
+	useNewUrlParser: true
 }).then(()=>{
 	console.log("Successfully connected to the database");
 }).catch(err =>{
