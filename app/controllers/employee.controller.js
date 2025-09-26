@@ -23,21 +23,35 @@ exports.create = (req, res) =>{
 	});
 };
 
-exports.findAll = (req, res) => {
-	try{
-		Employee.find()
-	.then(employees =>{
-		res.send(employees);
-	}).catch(err =>{
-		res.status(500).send({
-			message : err.message || "Some error occurred while retrieving employees."
-		});
-	});
-	}
-	catch(ex){
-		console.log(ex);
-	}
-};
+// exports.findAll = (req, res) => {
+// 	try{
+// 		Employee.find()
+// 	.then(employees =>{
+// 		res.send(employees);
+// 	}).catch(err =>{
+// 		res.status(500).send({
+// 			message : err.message || "Some error occurred while retrieving employees."
+// 		});
+// 	});
+// 	}
+// 	catch(ex){
+// 		console.log(ex);
+// 	}
+// };
+
+
+// Function to find all employees
+exports.findAll() = (req, res) =>  {
+  try {
+    const employees =  Employee.find({}); // Empty object finds all documents
+    console.log('All employees:', employees);
+    return employees;
+  } catch (err) {
+    console.error('Error finding employees:', err);
+    throw err;
+  }
+}
+
 
 exports.findOne = (req, res) => {
 	Employee.findById(req.params.employeeId)
