@@ -35,7 +35,7 @@ mongoose.connect(dbConfig.url,{
 
 
 app.get('/',(req, res)=>{
-	res.json({"message" : "Welcome to EarSoft..."});
+	res.json({"message" : "Welcome to EarSoft Developer Backend API..."});
 	
 });
 
