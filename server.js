@@ -3,10 +3,14 @@ const bodyParser = require('body-parser');
 
 
 var cors = require('cors')
-//var app = express()
+const corsConfig = {
+	origin: "*",
+	Credential : true,
+	methods : ["GET", "POST", "PUT", "DELETE"],
+}
 const app = express();
 
-app.use(cors())
+app.use(cors(corsConfig))
 
 
 
